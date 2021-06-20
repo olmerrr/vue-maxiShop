@@ -1,7 +1,12 @@
 # maxishop
-
+  vue,
+  vuex,
+  router,
+  axios,
+  json-server,
+  scss
 ## Project setup
-```
+
 npm install
 ```
 
