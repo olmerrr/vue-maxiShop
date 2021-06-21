@@ -21,7 +21,7 @@ export default new Vuex.Store({
           return products
         })
         .catch((err) => {
-          console.log(err)
+          console.log('error',err)
           return err
         })
 

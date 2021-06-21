@@ -33,8 +33,7 @@ export default {
  }
  .btn {
     width: 100%;
-    font-weight: 700;
-    padding: 6px 8px;
+    padding: 8px 16px;
     border: none;
     border-radius: 5px;
     background: rgba(6, 245, 165, 0.767);

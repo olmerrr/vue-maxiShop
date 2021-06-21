@@ -7,7 +7,7 @@
     />
     <ul>
       <li class="product__name">{{product_data.name}}</li>
-      <li class="product__price">{{product_data.price}}</li>
+      <li class="product__price">{{formatPrice(product_data.price)}} $</li>
       <li class="product__available">{{product_data.available}}</li>
     </ul>
     <button 
@@ -20,10 +20,6 @@
 <script>
 export default {
   name: 'v-catalog-item',
-  data() {
-    return {
-    }
-  },
   props: {
     product_data: {
       type: Object,
@@ -36,6 +32,10 @@ export default {
     sendDataToParent() {
       this.$emit('sendArticle', this.product_data.article)
     },
+    formatPrice(value) {
+      let val = (value / 1).toFixed(1).replace('.', ',')
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    }
   }
 }
 </script>
@@ -61,12 +61,12 @@ export default {
   }
   .product__available {
     margin-bottom: 20px;
-
-}
+  }
   .product__btn {   
+    font-weight: 700;
   }
   .product__btn:hover {
     color:#fff;
-    transition: all 0.5s;
+    transition: all 0.8s;
   }
 </style>

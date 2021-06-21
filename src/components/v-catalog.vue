@@ -47,9 +47,8 @@ export default {
   mounted() {
     this.GET_PRODUCTS_FROM_API().then((responce) => {
       if (responce.data) {
-        console.log("data added!)");
         this.isLoading = false;
-      } else console.log("nothing...(");
+      } return []
     });
   },
 };
