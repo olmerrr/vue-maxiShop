@@ -12,15 +12,8 @@ export default {
       title: 'this is data for v-card'
     }
   },
-  mounted() {
-    console.log('hello')
-  }
 }
 </script>
 
 <style lang="scss">
-  .v-main-wrapper {
-    margin: 0 auto;
-    padding: 15px;
-  }
 </style>

@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss">
   .v-main-wrapper {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
   }
