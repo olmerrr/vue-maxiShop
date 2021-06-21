@@ -1,7 +1,7 @@
 <template>
     <div class="v-main-wrapper">
-      <v-catalog />
       <v-card />
+      <v-catalog />
     </div>
 </template>
 
@@ -11,11 +11,6 @@ import vCard from '@/components/v-card';
 
 export default {
   name: 'v-main-wrapper',
-  data() {
-    return {
-      title: 'this is data for v-main-wrapper'
-    }
-  },
   components: {
       vCatalog,
       vCard
