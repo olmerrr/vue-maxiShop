@@ -12,7 +12,7 @@
     </ul>
     <button 
       class="product__btn btn"
-      @click="sendDataToParent"
+      @click="addToCart"
       >Add to</button>
     </div>
 </template>
@@ -29,8 +29,8 @@ export default {
     }
   },
   methods: {
-    sendDataToParent() {
-      this.$emit('sendArticle', this.product_data.article)
+    addToCart() {
+      this.$emit('addToCart', this.product_data)
     },
     formatPrice(value) {
       let val = (value / 1).toFixed(1).replace('.', ',')
