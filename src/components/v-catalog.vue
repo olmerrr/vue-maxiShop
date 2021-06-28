@@ -1,20 +1,15 @@
 <template>
   <div>
-    <section 
-      v-if="isLoading"
-      >
-      <v-loader />        
+    <section v-if="isLoading">
+      <v-loader />
     </section>
-    <section 
-      class="v-catalog"
-      v-else
-    >
+    <section class="v-catalog" v-else>
       <v-catalog-item
-          v-for="product in PRODUCTS"
-          :key="product.article"
-          :product_data="product"
-          @addToCart="addToCart"
-        />
+        v-for="product in PRODUCTS"
+        :key="product.article"
+        :product_data="product"
+        @addToCart="addToCart"
+      />
     </section>
   </div>
 </template>
@@ -28,21 +23,18 @@ export default {
   name: "v-catalog",
   components: {
     vCatalogItem,
-    vLoader
+    vLoader,
   },
   data() {
     return {
-      isLoading: true
+      isLoading: true,
     };
   },
   computed: {
     ...mapGetters(["PRODUCTS"]),
   },
   methods: {
-    ...mapActions([
-      "GET_PRODUCTS_FROM_API",
-      "ADD_TO_CART"
-      ]),
+    ...mapActions(["GET_PRODUCTS_FROM_API", "ADD_TO_CART"]),
     addToCart(data) {
       this.ADD_TO_CART(data);
     },
@@ -51,7 +43,8 @@ export default {
     this.GET_PRODUCTS_FROM_API().then((responce) => {
       if (responce.data) {
         this.isLoading = false;
-      } return []
+      }
+      return [];
     });
   },
 };
